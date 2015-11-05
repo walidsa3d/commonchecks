@@ -5,44 +5,44 @@ var reREGEX = require('regex-regex')
 var fs = require('fs')
 
 module.exports = {
-  isFile: function (variable) {
+  File: function (variable) {
     return fs.lstatSync(variable).isFile()
   },
-  isURL: function (variable) {
+  URL: function (variable) {
     return urlREGEX().test(variable)
   },
-  isString: function (variable) {
+  String: function (variable) {
     return typeof variable === 'string'
   },
-  isNumber: function (variable) {
+  Number: function (variable) {
     return typeof variable === 'number'
   },
-  isInteger: function (variable) {
-    return this.isNumber(variable) && variable % 1 === 0
+  Integer: function (variable) {
+    return this.Number(variable) && variable % 1 === 0
   },
-  isFloat: function (variable) {
+  Float: function (variable) {
     return variable === this.isNumber(variable) && variable % 1 !== 0
   },
 
-  isLowerCase: function (variable) {
+  LowerCase: function (variable) {
     return variable === variable.toLowerCase()
   },
-  isUpperCase: function (variable) {
+  UpperCase: function (variable) {
     return variable === variable.toUpperCase()
   },
-  isRegex: function (variable) {
+  Regex: function (variable) {
     return reREGEX.test(variable)
   },
-  isDir: function (variable) {
+  Dir: function (variable) {
     return fs.lstatSync(variable).isDirectory()
   },
-  isEmailAddress: function (variable) {
+  EmailAddress: function (variable) {
     return emailREGEX().test(variable)
   },
-  isIPAddress: function (variable) {
+  IPAddress: function (variable) {
     return ipREGEX().test(variable)
   },
-  isArray: function (variable) {
+  Array: function (variable) {
     return Array.isArray(variable)
   }
 }
