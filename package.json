@@ -1,6 +1,6 @@
 {
   "name": "commonchecks",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "common checks",
   "main": "index.js",
   "scripts": {
@@ -10,13 +10,20 @@
     "type": "git",
     "url": "https://github.com/walidsa3d/commonchecks"
   },
-  "keywords": ["is"] ,
+  "keywords": [
+    "is"
+  ],
   "author": "Walid Saad",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/walidsa3d/commonchecks/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "email-regex": "^1.0.0",
+    "ip-regex": "^1.0.3",
+    "regex-regex": "^1.0.0",
+    "url-regex": "^3.0.0"
+  },
   "devDependencies": {
     "chai": "~1.10.0",
     "grunt-contrib-watch": "~0.5.3",

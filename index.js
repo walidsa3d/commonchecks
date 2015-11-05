@@ -8,7 +8,7 @@ var isFile = function (variable) {
   return fs.lstatSync(variable).isFile()
 }
 var isURL = function (variable) {
-  return urlREGEX.test(variable)
+  return urlREGEX().test(variable)
 }
 var isString = function (variable) {
   return typeof variable === 'string'
@@ -20,14 +20,14 @@ var isInteger = function (variable) {
   return isNumber(variable) && variable % 1 === 0
 }
 var isFloat = function (variable) {
-  return variable === Number(variable) && variable % 1 !== 0
+  return variable === isNumber(variable) && variable % 1 !== 0
 }
 
 var isLowerCase = function (variable) {
-  return typeof variable === variable.toLowerCase()
+  return variable === variable.toLowerCase()
 }
 var isUpperCase = function (variable) {
-  return typeof variable === variable.toUpperCase()
+  return variable === variable.toUpperCase()
 }
 var isRegex = function (variable) {
   return reREGEX.test(variable)
@@ -36,10 +36,10 @@ var isDir = function (variable) {
   return fs.lstatSync(variable).isDirectory()
 }
 var isEmailAddress = function (variable) {
-  return emailREGEX.test(variable)
+  return emailREGEX().test(variable)
 }
 var isIPAddress = function (variable) {
-  return ipREGEX.test(variable)
+  return ipREGEX().test(variable)
 }
 var isArray = function (variable) {
   return Array.isArray(variable)
