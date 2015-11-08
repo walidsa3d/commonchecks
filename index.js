@@ -2,6 +2,7 @@ var urlREGEX = require('url-regex')
 var emailREGEX = require('email-regex')
 var ipREGEX = require('ip-regex')
 var reREGEX = require('regex-regex')
+var macREGEX = require('mac-regex')
 var fs = require('fs')
 
 module.exports = {
@@ -41,6 +42,9 @@ module.exports = {
   },
   IPAddress: function (variable) {
     return ipREGEX().test(variable)
+  },
+  MacAddress: function (variable) {
+    return macREGEX.test(variable)
   },
   Array: function (variable) {
     return Array.isArray(variable)
